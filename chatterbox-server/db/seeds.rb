@@ -1,26 +1,5 @@
-puts "🌱 Seeding messages..."
+puts "🌱 Seeding comments..."
 
-Message.create([
-  {
-    body: "Hello 👋",
-    username: "Liza"
-  },
-  {
-    body: "Hi!",
-    username: "Duane"
-  },
-  {
-    body: "let's get this chat app working",
-    username: "Liza"
-  },
-  {
-    body: "ngl, this looks like a lot 😬",
-    username: "Duane"
-  },
-  {
-    body: "You got this! 💪",
-    username: "Liza"
-  }
-])
+Comment.create( user_id: 3, blog_id: 2, body: "wqertyuioasdfghjklzxcvbn")
 
 puts "✅ Done seeding!"

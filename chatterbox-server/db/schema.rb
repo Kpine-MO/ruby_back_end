@@ -10,13 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_11_170002) do
+ActiveRecord::Schema.define(version: 2022_09_11_170458) do
 
-  create_table "messages", force: :cascade do |t|
+  create_table "blogs", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.string "category"
+    t.string "author"
+    t.datetime "createdOn"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.string "blogs"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "blog_id"
     t.string "body"
-    t.string "username"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at"
+  end
+
+  create_table "logins", force: :cascade do |t|
+    t.string "email"
+    t.string "password"
+  end
+
+  create_table "user_categories", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "category_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "user_name"
+    t.string "email"
+    t.string "password"
   end
 
 end
